@@ -1,0 +1,20 @@
+
+<h2>Lista de posts:</h2>
+<hr>
+{{#each this.posts}}
+<divc class="card mt-3">
+    <div class="card-body">
+        <h3>{{title}}</h3>
+        <p> descrição: {{description}}</p>
+        <p>Conteúdo: {{content}}</p>
+        <small>data: {{date}}</small>
+        <small> categoria:{{category.nome}}</small><br><br>
+        <a href="/admin/posts/edit/{{ _id }}"><button class="btn btn-success"> Editar postagem </button></a>
+        <a href="/admin/posts/delete/{{_id}}"><button class="btn btn-danger"> Apagar postagem </button></a>
+    </div>
+</divc>
+
+{{else}}
+<p>Não existe postagens</p>
+{{/each}}
+<a href="posts/add"><button class="btn btn-success mt-lg-4">Nova postagem</button></a>
